@@ -277,7 +277,7 @@ class savedSearchManager{
     // More properties can be passed for creation if desired, in an object.
     async _createSS(properties) {
         try {
-            var new_search = await this.saved_search.create(properties, function (err) {
+            var new_search = await this.saved_searches.create(properties, function (err) {
                 if (err) {
                     return err;
                 }
@@ -421,7 +421,7 @@ class savedSearchManager{
             "POST",
             null,
             null,
-            JSON.stringify(kv_store),
+            JSON.stringify(kv_data),
             { "Content-Type": "application/json" },
             function (err) {
                 if (err) {
